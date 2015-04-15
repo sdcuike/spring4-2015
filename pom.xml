@@ -21,16 +21,16 @@
 		<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<commons-lang3.version>3.4</commons-lang3.version>
 		<commons-io.version>2.4</commons-io.version>
 
-		<spring.version>4.1.4.RELEASE</spring.version>
+		<spring.version>4.1.6.RELEASE</spring.version>
 		<spring-asm.version>3.1.4.RELEASE</spring-asm.version>
-		<spring-security-web.version>3.2.5.RELEASE</spring-security-web.version>
+		<spring-security-web.version>4.0.0.RELEASE</spring-security-web.version>
 
 		<cglib.verson>3.1</cglib.verson>
 
-		<mybatis.version>3.2.7</mybatis.version>
+		<mybatis.version>3.2.8</mybatis.version>
 		<mybatis-spring.version>1.2.2</mybatis-spring.version>
 
 
@@ -40,7 +40,7 @@
 
 		<javax.servlet.version>9.2.2.v20140723</javax.servlet.version>
 
-		<jetty.version>9.2.8.v20150217</jetty.version>
+		<jetty.version>9.3.0.M2</jetty.version>
 	</properties>
 
 	<dependencyManagement>
