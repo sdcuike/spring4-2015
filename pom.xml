@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
 	                         http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -24,6 +22,7 @@
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<commons-io.version>2.4</commons-io.version>
 
+		<aspectjweaver.version>1.8.6</aspectjweaver.version>
 		<spring.version>4.1.6.RELEASE</spring.version>
 		<spring-asm.version>3.1.4.RELEASE</spring-asm.version>
 		<spring-security-web.version>4.0.0.RELEASE</spring-security-web.version>
@@ -95,6 +94,12 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectjweaver.version}</version>
 		</dependency>
 
 		<dependency>
@@ -254,7 +259,7 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>java</goal> <!-- mvn exec:java　web　控制台页面　路径 url:jdbc:h2:/home/xx/xx/spring4-2015/database/h2database -->
+							<goal>java</goal> <!-- mvn exec:java web 控制台页面 路径 url:jdbc:h2:/home/xx/xx/spring4-2015/database/h2database -->
 						</goals>
 					</execution>
 				</executions>
