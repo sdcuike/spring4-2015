@@ -45,6 +45,20 @@ import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
  * 
  * @see <a href= "http://www.javacodegeeks.com/2012/09/wire-object-dependencies-outside-spring.html">http://www.javacodegeeks.com/2012/09/wire-object-dependencies-outside-spring.html </a>
  * 
+ *      现在看看springJunit怎么实现测试用例实例内依赖注入的，代码：
+ *      org.springframework.test.context.support.DependencyInjectionTestExecutionListener
+ *      类的方法：
+ * 
+ *      protected void injectDependencies(final TestContext testContext) throws Exception {
+ *      Object bean = testContext.getTestInstance();
+ *      AutowireCapableBeanFactory beanFactory = testContext.getApplicationContext().getAutowireCapableBeanFactory();
+ *      beanFactory.autowireBeanProperties(bean, AutowireCapableBeanFactory.AUTOWIRE_NO, false);
+ *      beanFactory.initializeBean(bean, testContext.getTestClass().getName());
+ *      testContext.removeAttribute(REINJECT_DEPENDENCIES_ATTRIBUTE);
+ *      }
+ * 
+ *      是不是一样的原理。呵呵！
+ * 
  * @author doctor
  *
  * @time 2015年6月16日 上午9:33:54
