@@ -120,6 +120,30 @@ public class WireObjectDependenciesOutsideSpring {
 		applicationContext.close();
 	}
 
+	/**
+	 * 不受spring管理的对象，注册到容器，并实现依赖注入
+	 * 
+	 * @see http://www.javacodegeeks.com/2012/03/integrating-spring-into-legacy.html
+	 * 
+	 */
+	@Test
+	public void test_registerSingleton() {
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
+		Person person = new Person();
+		assertNull(person.getContext());
+
+		applicationContext.getBeanFactory().registerSingleton("person", person);
+		assertNotNull(applicationContext.getBean(Person.class));
+
+		assertNull(person.getContext());
+
+		applicationContext.getAutowireCapableBeanFactory().autowireBean(person);
+		assertNotNull(person.getContext());
+		Stream.of(applicationContext.getBeanDefinitionNames()).forEach(System.out::println);
+
+		applicationContext.close();
+	}
+
 	@Configuration
 	static class SpringConfig {
 
