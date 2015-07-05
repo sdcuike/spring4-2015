@@ -300,11 +300,6 @@
 		</repository>
 
 		<repository>
-			<id>CN</id>
-			<name>OSChina Central</name>
-			<url>http://maven.oschina.net/content/groups/public/</url>
-		</repository>
-		<repository>
 			<id>ui</id>
 			<name>Human Readable Name for this Mirror.</name>
 			<url>http://uk.maven.org/maven2/</url>
